@@ -32,15 +32,15 @@ while is_game_on:
         scoreboard.increase_score()
 
     if snake.head.xcor() > 280 or snake.head.ycor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() < -280:
-        is_game_on=False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
 
     for segment in snake.timmy:
         if snake.head == segment:
             pass
         elif snake.head.distance(segment) < 10:
-            is_game_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
 
 
